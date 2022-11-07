@@ -1,5 +1,4 @@
 [flake8]
-select = B,B9,BLK,C,E,F,I,S,W
 max-complexity = 10
 max-line-length = 80
 application-import-names = ultramodern_python, test
