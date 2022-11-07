@@ -1,0 +1,44 @@
+[tool.poetry]
+name = "ultramodern-python"
+version = "0.1.0"
+description = "Python package inspired by Hypermodern Python series"
+authors = ["Eduardo Würch <ewurch@gmail.com>"]
+license = "MIT"
+readme = "README.md"
+homepage = "https://github.com/ewurch/ultramodern-python.git"
+repository = "https://github.com/ewurch/ultramodern-python.git"
+keywords = ["python", "tutorial", "cli"]
+packages = [{include = "ultramodern_python", from = "src"}]
+
+[tool.poetry.scripts]
+ultramodern-python = "ultramodern_python.main:app"
+
+[tool.poetry.dependencies]
+python = "^3.10"
+typer = {extras = ["all"], version = "^0.7.0"}
+requests = "^2.28.1"
+
+
+[tool.poetry.group.dev.dependencies]
+pytest = "^7.2.0"
+coverage = {extras = ["toml"], version = "^6.5.0"}
+pytest-cov = "^4.0.0"
+pytest-mock = "^3.10.0"
+mypy = "^0.990"
+sphinx = "^5.3.0"
+sphinx-autodoc-typehints = "^1.19.5"
+
+[tool.coverage.paths]
+source = ["src", "*/site-packages"]
+
+[tool.coverage.run]
+branch = true
+source = ["ultramodern_python"]
+
+[tool.coverage.report]
+show_missing = true
+fail_under = 100
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
